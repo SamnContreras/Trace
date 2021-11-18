@@ -17,14 +17,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-function test () {
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "/public/index.html"));
+    rollbar.info("HTML file served successfully");
+});
 
-    try {
-        nonExistentFunction();
-    } catch (error) {
-        console.error(error);
-    }
-    
-}
 
 app.use(rollbar.errorHandler());
