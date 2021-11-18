@@ -23,3 +23,9 @@ app.get("/rollback", (req, res) => {
 });
 
 app.use(rollbar.errorHandler());
+
+const port = process.env.PORT || 5501;
+
+app.listen(port, () => {
+    console.log(`Teleportation to ${port} was successful`);
+});
