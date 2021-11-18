@@ -18,8 +18,17 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/rollback", (req, res) => {
-    rollbar.log("test");
+    rollbar.info("test");
     console.log("test")
+    try {
+        try_statements
+      }
+      catch (exception_var) {
+        catch_statements
+      }
+      finally {
+        finally_statements
+      }
 });
 
 app.use(rollbar.errorHandler());
