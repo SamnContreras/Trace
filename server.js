@@ -17,5 +17,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+try {
+    nonExistentFunction();
+  } catch (error) {
+    console.error(error);
+}
 
 app.use(rollbar.errorHandler());
