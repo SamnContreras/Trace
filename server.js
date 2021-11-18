@@ -18,8 +18,8 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/rollback", (req, res) => {
-    rollbar.info("HTML file served successfully");
-    console.log("error")
+    rollbar.log("test");
+    console.log("test")
 });
 
 app.use(rollbar.errorHandler());
